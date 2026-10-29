@@ -43,12 +43,6 @@ app.get('/', (req, res) => {
   res.send('Servidor funcionando');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta http://localhost:${PORT}`);
-});
-
-
 app.get('/aluno', (req, res) => {
   res.json(aluno);
 });
@@ -71,4 +65,9 @@ app.get ('/ajuda', (req, res) => {
 
 app.get ('/requisicao', (req, res) => {
     res.send(`O metodo de requisição utilizado foi: ${req.method} e o caminho dela foi: ${req.path}`);
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta http://localhost:${PORT}`);
 });
